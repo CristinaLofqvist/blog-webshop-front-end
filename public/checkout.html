@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/flexboxtempaltes.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <title>Document</title>
+    <script src="shoppingcart.js"></script>
+    <script src="burger.js"></script>
+    <script src="formValidation.js"></script>
+    <script>
+        function placeOrder() {
+
+            for (let i = 0; i < document.getElementById("checkoutForm").elements.length - 1; i++) {
+                if (!document.getElementById("checkoutForm").elements[i].value) {
+                    return
+                }
+            }
+
+            let firstName = document.getElementById("checkoutForm").elements[0].value;
+            let lastName = document.getElementById("checkoutForm").elements[1].value;
+            let email = document.getElementById("checkoutForm").elements[2].value;
+            let country = document.getElementById("checkoutForm").elements[3].value;
+            let state = document.getElementById("checkoutForm").elements[4].value;
+            let city = document.getElementById("checkoutForm").elements[5].value;
+            let zip = document.getElementById("checkoutForm").elements[6].value;
+            let address = document.getElementById("checkoutForm").elements[7].value;
+
+            if (!checkoutValidation(firstName, lastName, email)) {
+                return
+            }
+            checkoutShoppingcart(firstName, lastName, email, country, state, city, zip, address)
+        }
+        function onLoad() {
+            toggleHidden('header-nav', 800, 'burger')
+            showCheckout()
+        }
+    </script>
+</head>
+
+<body onload="onLoad()" onresize="toggleHidden('header-nav', 800, 'burger')">
+        <header class="parallax8 flexbox flex-direction-column flex-align-i-center">
+                <div class="flexbox flex-direction-column flex-align-i-center flex-justify-flex-start h-100 w-100">
+                    <div class="firstHeading flexbox flex-direction-row flex-justify-space-between w-100">
+                        <a href="index.html"><img src="./Imagesmodified/Logo4.png" alt="Logo" class="logo" id="logo"></a>
+                        <div class="flexbox flex-direction-row bag-and-search flex-align-i-center flex-justify-space-evenly">
+                            <div class="bag-container">
+                                <a href="checkout.html"><img src="./Imagesmodified/icons8-messenger-bag-50.png" alt="carticon"
+                                        class="bagimg" onload="showSmallShoppingcart()"></a>
+                                <a class="small-shoppingcart-container" href="checkout.html">
+                                    <div id="small-shoppingcart"></div>
+                                </a>
+                            </div>
+                            <div id="burger" onclick="toggleOpenBurger('burger','header-nav','flex')">
+                                <div class="burger-bun"></div>
+                                <div class="burger-bun"></div>
+                                <div class="burger-bun"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Kassa</h1>
+        
+                </div>
+                <nav id="header-nav" class="show nav">
+                    <a href="./climate.html">Klimatet</a>
+                    <a href="./recykle.html">Återvinning</a>
+                    <a href="./reuse.html">Återbruka</a>
+                    <a href="./selfS.html">Självförsörjning</a>
+                    <a href="./lifehacks.html">Life Hacks</a><a href="./blogg.html">Blogg</a>
+                    <a href="./webbshop.html">Webbutik</a>
+                </nav>
+            </header>
+    <div class="flexbox flex-align-i-center flex-direction-column">
+        <br>
+        <div id="checkout"></div>
+        <form id="checkoutForm" name='checkout' class="hidden">
+            <label for="firstName">Förnamn</label>
+            <input id="firstname" type="text" name="firstname" class="inputArea" placeholder="Förnamn...">
+            <br>
+            <label for="lastName">Efternamn</label>
+            <input type="text" name="lastname" class="inputArea" id='lastname' placeholder="Efternamn..."></input>
+            <br>
+            <label for="email">Email</label>
+            <input type="text" class="inputArea" name="email" id='email' placeholder="Din email..."></input>
+            <br>
+            <label for="country">Land</label>
+            <input type="text" name="country" class="inputArea" id='country' placeholder="Sverige..."></input>
+            <br>
+            <label for="state">Provins</label>
+            <input type="text" class="inputArea" name="state" id='state' placeholder="Skåne..."></input>
+            <br>
+            <label for="city">Stad</label>
+            <input type="text" class="inputArea" name="city" id='city' placeholder="Lund..."></input>
+            <br>
+            <label for="zip">Postadress</label>
+            <input type="text" class="inputArea" name="zip" id='zip' placeholder="22270 LUND..."></input>
+            <br>
+            <label for="address">Adress</label>
+            <input type="text" class="inputArea" name="address" id='address'
+                placeholder="Klostergårdsvägen 85..."></input>
+            <br>
+            <div class="checkout-button-container">
+                <button class="checkout-button" onclick="placeOrder()">Lägg en order</button>
+            </div>
+            <br>
+        </form>
+    </div>
+</body>
+
+</html>

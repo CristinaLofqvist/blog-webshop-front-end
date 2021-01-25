@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!--*********************************************************************
+ * Websida med JavaScript funktioner
+ * Written by Cristina Löfqvist/ Karlstad University in June-2020.
+ *********************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/flexboxtempaltes.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <title>Document</title>
+    <script src="shoppingcart.js"></script>
+    <script src="burger.js"></script>
+
+</head>
+
+<body onload="toggleHidden('header-nav', 800, 'burger')" onresize="toggleHidden('header-nav', 800, 'burger')">
+    <header class="parallax4 flexbox flex-direction-column flex-align-i-center">
+        <div class="flexbox flex-direction-column flex-align-i-center flex-justify-flex-start h-100 w-100">
+            <div class="firstHeading flexbox flex-direction-row flex-justify-space-between w-100">
+                <a href="index.html"><img src="./Imagesmodified/Logo4.png" alt="Logo" class="logo" id="logo"></a>
+                <div class="flexbox flex-direction-row bag-and-search flex-align-i-center flex-justify-space-evenly">
+                    <div class="bag-container">
+                        <a href="checkout.html"><img src="./Imagesmodified/icons8-messenger-bag-50.png" alt="carticon"
+                                class="bagimg" onload="showSmallShoppingcart()"></a>
+                        <a class="small-shoppingcart-container" href="checkout.html">
+                            <div id="small-shoppingcart"></div>
+                        </a>
+                    </div>
+                    <div id="burger" onclick="toggleOpenBurger('burger','header-nav','flex')">
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Återbruka</h1>
+
+        </div>
+        <nav id="header-nav" class="show nav">
+            <a href="./climate.html">Klimatet</a>
+            <a href="./recykle.html">Återvinning</a>
+            <a href="./reuse.html">Återbruka</a>
+            <a href="./selfS.html">Självförsörjning</a>
+            <a href="./lifehacks.html">Life Hacks</a><a href="./blogg.html">Blogg</a>
+            <a href="./webbshop.html">Webbutik</a>
+        </nav>
+    </header>
+    <main>
+        <div class="middlebody">
+            <div class="flexbox flex-justify-center">
+                <h2 class="first_heading">Att bruka återbruka</h2>
+            </div>
+            <div class="flexbox flex-direction-column flex-align-i-center">
+                <div class="reuse_middlebody w-100">
+                    <article>
+                        <img src="./Imagesmodified/rocknwool-Ls7yE8NpNqk-unsplash.jpg" width="300" height="200"
+                            alt="Bild av handstickning" />
+                        <h2>Fördelarna med handarbete</h2>
+
+                        <a href="https://www.lifehack.org/314247/6-unexpected-benefits-knitting"> <button
+                                class="dropbtn">Mer info</button>
+                        </a>
+                        <!--Länk till lifehack-->
+                    </article>
+                    <br>
+                    <article>
+                        <img src="./Imagesmodified/anna-utochkina-qLoOac13gbU-unsplash.jpg" width="300" height="200"
+                            alt="skyltdockor med peruker i skyltfönster" />
+                        <h2>Vad är köphets?</h2>
+
+                        <a href="https://ekotraning.se/nyheter/green-new-black-miljo-fore-kophets/">
+                            <button>Mer info</button>
+                        </a>
+
+                    </article>
+                </div>
+                <!--end of div class="reuse_middlebody"-->
+                <div class="reuse_middlebody w-100">
+                    <article>
+                        <img src="./Imagesmodified/david-fartek-8xxW3z31k8A-unsplash.jpg" width="300" height="200"
+                            alt="Fem päron på rad" />
+                        <h2>Rädda svinnet</h2>
+                        <a
+                            href="https://www.livsmedelsverket.se/matvanor-halsa--miljo/miljo/ta-hand-om-maten-minska-svinnet/Tips-minska-matsvinnet/">
+                            <button>Mer info</button>
+                        </a>
+                    </article>
+                    <br>
+
+                    <article>
+                        <img src="./Imagesmodified/joanna-kosinska-6uBfxz_PTcU-unsplash.jpg" width="300" height="200"
+                            alt="sax och snöre på ett bord" />
+                        <h2>Lappa och laga</h2>
+                        <a href="https://hemslojden.org/tag/lappa-och-laga/">
+                            <button>Mer info</button>
+                        </a>
+
+
+                        <!--Kred till skaparen av bild av stickning <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@rocknwool?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from rocknwool"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">rocknwool</span></a>-->
+                        <!--Kred till skaparen av bild av skyltdockor <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@utochkina?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Anna Utochkina"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Anna Utochkina</span></a>-->
+                        <!--Kred till skapare av bild av päron<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@dfartek?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from David Fartek"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">David Fartek</span></a>-->
+                        <!--Kred till skapare av bild av sax och tråd <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@joannakosinska?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Joanna Kosinska"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Joanna Kosinska</span></a>-->
+
+                    </article>
+                </div>
+                <!--end of div class="reuse_middlebody"-->
+            </div>
+            <div class="flexbox flex-direction-column flex-align-i-center" id="reuse-lowbody">
+                <article>
+                    <h2>Vill du köpa begagnade varor istället för nytt?</h2>
+                    <p>Det behöver inte vara svårt att komma igång med att handla begagnat.</p>
+                    <p> Idag finns flera siter som erbjuder seconhand handel på nätet så att du kan hitta </p>
+                    <p>just det du letar efter. </p>
+                </article>
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="https://www.sellpy.se/" class="animated-arrow">
+                                <span class="the-arrow -left">
+                                    <span class="shaft"></span>
+                                </span>
+                                <span class="main">
+                                    <span class="text">
+                                        Se här
+                                    </span>
+                                    <span class="the-arrow -right">
+                                        <span class="shaft"></span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footerPitch">
+            <h2>Vårt mål!</h2>
+            <p>Planet B försöker sprida kunskap om hur du enkelt kan
+                bli mer medveten om din klimatpåverkan och vad du kan
+                göra för att vi tillsammans ska nå klimatmålen 2045.
+                Let´s do it!
+            </p>
+        </div>
+        <div class="footericons">
+            <div class="socialmedia">
+                <h2>Följ oss på socialamedier</h2>
+
+                <img src="./Imagesmodified/facebok.png" alt="facebokicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/instagram.png" alt="instagramicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/linkedin.png" alt="linkedinicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/pinterest.png" alt="pinteresticon" class="socialmediaIcon">
+                <img src="./Imagesmodified/youtube.png" alt="youtubeicon" class="socialmediaIcon">
+            </div>
+            <div class="copyright flexbox flex-direction-row flex-justify-flex-end">
+                <img src="./Imagesmodified/icons8-copyright-26.png" alt="copyrighticon" class="copyrightIcon">
+                <p>Cristina Löfqvist</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

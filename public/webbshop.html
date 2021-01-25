@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!--*********************************************************************
+ * Webbsite
+ * Written by Cristina Löfqvist/ Karlstad University in June-2020.
+ *********************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/flexboxtempaltes.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <title>Document</title>
+    <script src="shoppingcart.js"></script>
+    <script src="burger.js"></script>
+    <script>
+        function getProducts() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "https://blogg-webshop.herokuapp.com/products/get", true);
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var response = this.responseText;
+                    var products = JSON.parse(response);
+                    var productarea = document.getElementById("productsDisplay");
+                    productarea.innerHTML = "";
+                    var divEl = document.createElement("div")
+                    divEl.className = "product-container"
+                    for (var i = 0; i < products.length; i++) {
+                        if (i % 3 == 0) {
+                            productarea.appendChild(divEl)
+                            divEl = document.createElement("div")
+                            divEl.className = "product-container"
+                        }
+                        var itemEl = document.createElement("article")
+
+                        var itemImg = document.createElement("img")
+                        itemImg.setAttribute("src", products[i].image)
+                        itemImg.setAttribute("alt", products[i].imageAlt)
+                        //itemEl.appendChild(itemImg);
+
+                        var itemUnderpage = document.createElement("a")
+                        itemUnderpage.href = "item" + products[i].itemId + ".html"
+                        itemUnderpage.appendChild(itemImg)
+                        itemEl.appendChild(itemUnderpage)
+
+                        itemUnderpage = document.createElement("a")
+                        itemUnderpage.href = "item" + products[i].itemId + ".html"
+                        var titleEl = document.createElement("h2")
+                        titleEl.innerHTML = products[i].name
+                        itemUnderpage.appendChild(titleEl)
+                        itemEl.appendChild(itemUnderpage)
+
+                        /* var descEl = document.createElement("p")
+                         descEl.innerHTML = products[i].description 
+                         itemEl.appendChild(descEl) */
+                        var buttonEl = document.createElement("button")
+                        var name = products[i].name
+                        var price = products[i].price
+                        var img = products[i].image
+                        buttonEl.setAttribute("onclick", "addToShoppingcart(this ,'" + name + "'," + price + ",'" + img + "')")
+
+                        buttonEl.innerHTML = 'köp'
+
+                        itemEl.appendChild(buttonEl)
+                        divEl.appendChild(itemEl);
+                    }
+                    productarea.appendChild(divEl)
+                }
+            }
+            xhttp.send();
+            toggleHidden('header-nav', 800, 'burger')
+        }
+    </script>
+</head>
+
+<body onresize="toggleHidden('header-nav', 800, 'burger')" onload="getProducts()">
+    <header class="parallax flexbox flex-direction-column flex-align-i-center">
+        <div class="flexbox flex-direction-column flex-align-i-center flex-justify-flex-start h-100 w-100">
+            <div class="firstHeading flexbox flex-direction-row flex-justify-space-between w-100">
+                <a href="index.html"><img src="./Imagesmodified/Logo4.png" alt="Logo" class="logo" id="logo"></a>
+                <div class="flexbox flex-direction-row bag-and-search flex-align-i-center flex-justify-space-evenly">
+                    <div class="bag-container">
+                        <a href="checkout.html"><img src="./Imagesmodified/icons8-messenger-bag-50.png" alt="carticon"
+                                class="bagimg" onload="showSmallShoppingcart()"></a>
+                        <a class="small-shoppingcart-container" href="checkout.html">
+                            <div id="small-shoppingcart"></div>
+                        </a>
+                    </div>
+                    <div id="burger" onclick="toggleOpenBurger('burger','header-nav','flex')">
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Webbshop</h1>
+
+        </div>
+        <nav id="header-nav" class="show nav">
+            <a href="./climate.html">Klimatet</a>
+            <a href="./recykle.html">Återvinning</a>
+            <a href="./reuse.html">Återbruka</a>
+            <a href="./selfS.html">Självförsörjning</a>
+            <a href="./lifehacks.html">Life Hacks</a><a href="./blogg.html">Blogg</a>
+            <a href="./webbshop.html">Webbutik</a>
+        </nav>
+    </header>
+    <div id="productsDisplay">
+
+    </div>
+    <!--end of product display div-->
+    <footer>
+        <div class="footerPitch">
+            <h2>Vårt mål!</h2>
+            <p>Planet B försöker sprida kunskap om hur du enkelt kan
+                bli mer medveten om din klimatpåverkan och vad du kan
+                göra för att vi tillsammans ska nå klimatmålen 2045.
+                Let´s do it!
+            </p>
+        </div>
+        <div class="footericons">
+            <div class="socialmedia">
+                <h2>Följ oss på socialamedier</h2>
+
+                <img src="./Imagesmodified/facebok.png" alt="facebokicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/instagram.png" alt="instagramicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/linkedin.png" alt="linkedinicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/pinterest.png" alt="pinteresticon" class="socialmediaIcon">
+                <img src="./Imagesmodified/youtube.png" alt="youtubeicon" class="socialmediaIcon">
+            </div>
+            <div class="copyright flexbox flex-direction-row flex-justify-flex-end">
+                <img src="./Imagesmodified/icons8-copyright-26.png" alt="copyrighticon" class="copyrightIcon">
+                <p>Cristina Löfqvist</p>
+            </div>
+        </div>
+    </footer>
+    <script src="shoppingcart.js"></script>
+</body>
+
+</html>

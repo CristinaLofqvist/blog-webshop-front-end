@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!--*********************************************************************
+ * Webbsite
+ * Written by Cristina Löfqvist/ Karlstad University in June-2020.
+ *********************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/flexboxtempaltes.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <title>Document</title>
+    <script src="shoppingcart.js"></script>
+    <script src="burger.js"></script>
+</head>
+
+<body onload="toggleHidden('header-nav', 800, 'burger')" onresize="toggleHidden('header-nav', 800, 'burger')">
+        <header class="parallax2 flexbox flex-direction-column flex-align-i-center">
+                <div class="flexbox flex-direction-column flex-align-i-center flex-justify-flex-start h-100 w-100">
+                    <div class="firstHeading flexbox flex-direction-row flex-justify-space-between w-100">
+                        <a href="index.html"><img src="./Imagesmodified/Logo4.png" alt="Logo" class="logo" id="logo"></a>
+                        <div class="flexbox flex-direction-row bag-and-search flex-align-i-center flex-justify-space-evenly">
+                            <div class="bag-container">
+                                <a href="checkout.html"><img src="./Imagesmodified/icons8-messenger-bag-50.png" alt="carticon"
+                                        class="bagimg" onload="showSmallShoppingcart()"></a>
+                                <a class="small-shoppingcart-container" href="checkout.html">
+                                    <div id="small-shoppingcart"></div>
+                                </a>
+                            </div>
+                            <div id="burger" onclick="toggleOpenBurger('burger','header-nav','flex')">
+                                <div class="burger-bun"></div>
+                                <div class="burger-bun"></div>
+                                <div class="burger-bun"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Klimatet</h1>
+        
+                </div>
+                <nav id="header-nav" class="show nav">
+                    <a href="./climate.html">Klimatet</a>
+                    <a href="./recykle.html">Återvinning</a>
+                    <a href="./reuse.html">Återbruka</a>
+                    <a href="./selfS.html">Självförsörjning</a>
+                    <a href="./lifehacks.html">Life Hacks</a><a href="./blogg.html">Blogg</a>
+                    <a href="./webbshop.html">Webbutik</a>
+                </nav>
+            </header>
+    <div class="wrapper">
+        <div class="middlebody">
+            <div class="flexbox flex-justify-center">
+                <h2 class="first_heading">Klimatpåverkan</h2>
+            </div>
+            <div class="middlebody-links">
+                <div>
+                    <img src="./Imagesmodified/icons8-gas-station-64.png" width="50" height="50"
+                        alt="Ikon bild av en bensinstation" />
+                    <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                    <a href="https://www.wwf.se/klimat/klarar-vi-klimatmalen/">Klarar vi klimatmålen?</a>
+                    <!--länk till wwf-->
+                </div>
+                <div>
+                    <img src="./Imagesmodified/icons8-geography-50.png" width="50" height="50"
+                        alt="Ikon bild av FN Symbol" />
+                    <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                    <a href="https://unfccc.int/">United Nations Climate Change</a>
+                    <!--länk till FN-->
+                </div>
+                <div>
+                    <img src="./Imagesmodified/icons8-tree-planting-64.png" width="50" height="50"
+                        alt="Ikon bild av en kupad hand som håller jord och växter" />
+                    <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                    <a
+                        href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Sa-foljer-vi-upp-klimatmalen/">Naturvårds
+                        verket. <br> Så följs klimatmålen upp.</a>
+                    <!--länk till Naturvårdsverket-->
+                </div>
+            </div>
+        </div>
+        <div class="side-by-side climate-lower-body">
+            <!--Innehållande element ringas in i div med både klass och id-->
+
+            <!-- kred till bild skaparen jordklot nummer 2 
+            <a style="background-color:black;color:white;text-decoration:none;padding:4px 
+            6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, 
+            &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, 
+            Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:
+            3px" href="https://unsplash.com/@louishansel?utm_medium=referral&amp;
+            utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" 
+            rel="noopener noreferrer" title="Download free do whatever you want high-resolution 
+            photos from Louis Hansel"><span style="display:inline-block;padding:2px 3px"><svg 
+                xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;
+                vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo
+                </title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span>
+                <span style="display:inline-block;padding:2px 3px">Louis Hansel</span></a>-->
+            <article id="climate-control-article">
+                <img id="earth-pic" src="./Imagesmodified/louis-hansel-ZeRAzQMf4MI-unsplash.jpg" width="500"
+                    height="400" alt="Bild av en kupad hand som håller i en liten boll utformad som ett jordklot" />
+                <h2>Hur många jordklot går åt?</h2>
+                <p>Allt som produceras påverkar hav, skog, luft och allt som finns omkring oss. Idag lever vi människor
+                    på
+                    ett
+                    sätt som gör att det skulle krävas 1,7 jordklot för att ta fram de resurser
+                    som vi förbrukar och för att absorbera de utsläpp vi lämnar. I Sverige lever vi som om vi hade 4
+                    jordklot.
+                </p>
+                <p class="source">Källa WWF "Ekologiska fotavtryck" Publicerad 2019-03-19. Hämtad 20
+                    19-10-23. </p>
+                <h2>Vill du veta ditt avtryck?</h2>
+                <h3>En bra inkörsport för att börja dra ner på sina egna utsläpp är att ta reda på hur mycket koldioxid
+                    man
+                    förbrukar i dagsläget. Här kan du mäta dina utsläpp av koldioxid. </h3>
+
+            </article>
+        </div>
+        <div class="side-by-side climate-lower-body" id="emission">
+            <img src="./Imagesmodified/hello-i-m-nik-MAgPyHRO0AA-unsplash.jpg" alt="Bild av Pil" id="pil_img" />
+            <a href="https://www.klimatkalkylatorn.se/">
+                <button class="special_button">
+                    Klimatkalkylatorn
+                    <div class="special_button__horizontal"></div>
+                    <div class="special_button__vertical"></div>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerPitch">
+            <h2>Vårt mål!</h2>
+            <p>Planet B försöker sprida kunskap om hur du enkelt kan
+                bli mer medveten om din klimatpåverkan och vad du kan
+                göra för att vi tillsammans ska nå klimatmålen 2045.
+                Let´s do it!
+            </p>
+        </div>
+        <div class="footericons">
+            <div class="socialmedia">
+                <h2>Följ oss på socialamedier</h2>
+
+                <img src="./Imagesmodified/facebok.png" alt="facebokicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/instagram.png" alt="instagramicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/linkedin.png" alt="linkedinicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/pinterest.png" alt="pinteresticon" class="socialmediaIcon">
+                <img src="./Imagesmodified/youtube.png" alt="youtubeicon" class="socialmediaIcon">
+            </div>
+            <div class="copyright flexbox flex-direction-row flex-justify-flex-end">
+                <img src="./Imagesmodified/icons8-copyright-26.png" alt="copyrighticon" class="copyrightIcon">
+                <p>Cristina Löfqvist</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

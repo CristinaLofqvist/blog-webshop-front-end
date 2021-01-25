@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!--*********************************************************************
+ * Websida 
+ * Written by Cristina Löfqvist/ Karlstad University in June-2020.
+ *********************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/flexboxtempaltes.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <title>Document</title>
+    <script src="shoppingcart.js"></script>
+    <script src="burger.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body onload="toggleHidden('header-nav', 800, 'burger')" onresize="toggleHidden('header-nav', 800, 'burger')">
+    <header class="parallax7 flexbox flex-direction-column flex-align-i-center">
+        <div class="flexbox flex-direction-column flex-align-i-center flex-justify-flex-start h-100 w-100">
+            <div class="firstHeading flexbox flex-direction-row flex-justify-space-between w-100">
+                <a href="index.html"><img src="./Imagesmodified/Logo4.png" alt="Logo" class="logo" id="logo"></a>
+                <div class="flexbox flex-direction-row bag-and-search flex-align-i-center flex-justify-space-evenly">
+                    <div class="bag-container">
+                        <a href="checkout.html"><img src="./Imagesmodified/icons8-messenger-bag-50.png" alt="carticon"
+                                class="bagimg" onload="showSmallShoppingcart()"></a>
+                        <a class="small-shoppingcart-container" href="checkout.html">
+                            <div id="small-shoppingcart"></div>
+                        </a>
+                    </div>
+                    <div id="burger" onclick="toggleOpenBurger('burger','header-nav','flex')">
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Lifehacks</h1>
+
+        </div>
+        <nav id="header-nav" class="show nav">
+            <a href="./climate.html">Klimatet</a>
+            <a href="./recykle.html">Återvinning</a>
+            <a href="./reuse.html">Återbruka</a>
+            <a href="./selfS.html">Självförsörjning</a>
+            <a href="./lifehacks.html">Life Hacks</a><a href="./blogg.html">Blogg</a>
+            <a href="./webbshop.html">Webbutik</a>
+        </nav>
+    </header>
+    <div class="middlebody">
+        <div class="flexbox flex-direction-column flex-align-i-center">
+            <h1> Life hacks</h1>
+            <h3>Man kan aldrig få för mycket tips därför tänkte vi dela med oss av våra bästa vardagstips</h3>
+        </div>
+        <div id="flexbox-lifehacks">
+            <article>
+                <img src="./Imagesmodified/sylvie-tittel-ILR5ikYmXDE-unsplash.jpg" width="300" height="200"
+                    alt="Arm som sträcker ut en tyg kasse" />
+                <!--Ger cred till skaparen av bilden. Bilderna har ladddats ner från en free image webplats <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@misssinterpreted?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Sylvie Tittel"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Sylvie Tittel</span></a>-->
+                <h2>Ersätta Plasten</h2>
+                <p>Inte bara haven är fyllda av plast utan det finns även överallt i människors närmiljö.</p>
+                <p>Det tar flera hundra år för naturen att bryta ner plasten så det är fördelaktigt att försöka
+                    hitta
+                    andra alternativ för privat bruk av plast. </p>
+                <p>Idag finns ganska många alternativ till plast om man letar lite.</p>
+                <p>Tur att det nu finns både fryspåsar, påsklämmor, tandkräm och flosspicks som är
+                    plastfria.</p>
+            </article>
+            <article>
+                <img src="./Imagesmodified/superkitina-rCT928GIboM-unsplash.jpg" width="300" height="200"
+                    alt="Närbild av tandborstar i glas" />
+                <!--Ger cred till skaparen av bilden. Bilderna har ladddats ner från en free image webplats<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@daiga_ellaby?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Daiga Ellaby"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Daiga Ellaby</span></a>-->
+                <h2>Städa</h2>
+                <p>Det är dyrt och trist att behöva släpa hem massa giftiga städprodukter men i många fall kan man
+                    faktiskt klara sig utan.</p>
+                <p>För att rengöra kakel och vask går det jättebra att använda bikarbonat.</p>
+                <p>För att skura golv kan man med fördel använda linoljesåpa.</p>
+                <p>För att städa mer grova utrymme som till exempel toalett går det jättebra att använda bikarbonat som
+                    får stå en
+                    stund
+                    och sen tillsätta äppelcidervinäger blandat med lite varmt vatten</p>
+            </article>
+            <article>
+                <img src="./Imagesmodified/tim-mossholder-ArQIWcmOlA8-unsplash.jpg" width="300" height="200"
+                    alt="Kvinna med långt hår, baksida" />
+
+                <!--<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@superkitina?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Superkitina"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Superkitina</span></a>-->
+                <h2>Hårtvätt</h2>
+                <p>En spännande och lite omvälvande sak med hår är att håret inte behöver shampo eller balsam.</p>
+                <p>Användningen av onaturliga produkter rubbar hårets naturliga balans och det är dessutom dyrt att
+                    köpa.</p>
+
+                <p>Man kan med fördel tvätta håret så här:</p>
+
+                <ol>
+                    <li>Blanda 2 msk bikarbonat med 1 msk honung och 3 dl varmt vatten.</li>
+                    <li>Gnugga in väl i blött hår och skölj noga ur</li>
+                    <li>Blanda 3 mak äppelcidervinäger med 5 dl kallt vatten</li>
+                    <li>applicera i håret men skölj ej ur.</li>
+                    <li>Låt torka</li>
+                </ol>
+
+
+            </article>
+            <article>
+                <img src="./Imagesmodified/elaine-casap-qgHGDbbSNm8-unsplash.jpg" width="300" height="200"
+                    alt="Händer som håller i tomater" />
+                <!--Ger cred till skaparen av bilden. Bilderna har ladddats ner från en free image webplats<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@rezelkealoha?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Rezel Apacionado"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Rezel Apacionado</span></a>-->
+                <h2>Vad är rekoring?</h2>
+                <p>Rekoring är en plattform där man kan handla och sälja lokal mat med känt ursprung.</p>
+                <p>Man anmäler sig till rekoring genom att gå med i facebook gruppen för området där man bor. Oftast
+                    är
+                    lokal rekoring
+                    döpt efter orten.</p>
+                <p>Inför försäljning så annonseras varorna ut i inlägget i facebookgruppen.</p>
+                <p class="source">Källa: Hushållningssällskapet "Närmsta rekoring?"
+                    https://hushallningssallskapet.se/forskning-utveckling/reko/narmsta-reko-ring/. publicerad:
+                    2019.
+                    Hämtad 2019-10-24. </p>
+                <p></p>
+            </article>
+        </div>
+    </div>
+    <footer>
+        <div class="footerPitch">
+            <h2>Vårt mål!</h2>
+            <p>Planet B försöker sprida kunskap om hur du enkelt kan
+                bli mer medveten om din klimatpåverkan och vad du kan
+                göra för att vi tillsammans ska nå klimatmålen 2045.
+                Let´s do it!
+            </p>
+        </div>
+        <div class="footericons">
+            <div class="socialmedia">
+                <h2>Följ oss på socialamedier</h2>
+
+                <img src="./Imagesmodified/facebok.png" alt="facebokicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/instagram.png" alt="instagramicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/linkedin.png" alt="linkedinicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/pinterest.png" alt="pinteresticon" class="socialmediaIcon">
+                <img src="./Imagesmodified/youtube.png" alt="youtubeicon" class="socialmediaIcon">
+            </div>
+            <div class="copyright flexbox flex-direction-row flex-justify-flex-end">
+                <img src="./Imagesmodified/icons8-copyright-26.png" alt="copyrighticon" class="copyrightIcon">
+                <p>Cristina Löfqvist</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

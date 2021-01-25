@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!--*********************************************************************
+ * Registrera användare
+ * Written by Cristina Löfqvist/ Karlstad University in June-2020.
+ *********************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/flexboxtempaltes.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <title>Document</title>
+    <script src="shoppingcart.js"></script>
+    <script src="burger.js"></script>
+    <script>
+
+        /*** validerar användar input***/
+
+        /*funktion som vailderar att input fältet för email är korrekt ifylld*/
+        function validateEmail(inputText) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.length < 1) {
+                alert("Du har fyllt i en ogiltigt emailadress");
+                return false
+            }
+            if (inputText.match(mailformat)) {
+                return true;
+            } else {
+                alert("Du har fyllt i en ogiltigt emailadress");
+                return false;
+            }
+        }
+
+        /*funktion som vailderar att input fältet för användarnamn endast innehåller bokstäver*/
+        function allLetter(text, msg) {
+            var letters = /^[A-Öa-ö]+$/;
+            if (text.length < 1) {
+                alert("Fältet för " + msg + " får inte vara tomt")
+                return false
+            }
+            if (text.match(letters)) {
+                return true;
+            } else {
+                alert("Ogiltigt " + msg)
+                return false;
+            }
+        }
+
+        /* funktion som validerar att lösen inte får vara tomt eller längd mindre än 7 teken eller mer än 12 tecken. */
+        function password_validation(password, mx, my) {
+            var password_len = password.length;
+            if (password_len == 0 || password_len >= my || password_len < mx) {
+                alert("Lösenord får inte vara tomt / längden måste vara mellan " + mx + " till " + my);
+                return false;
+            }
+            return true;
+        }
+
+        /* Denna funktion anropar samtliga funktioner som används i validering av användaruppgifter*/
+        function formValidation(firstName, lastName, userName, email, password) {
+            let return_val = true
+            if (!allLetter(firstName, "Förnamn")) {
+                return_val = false;
+            }
+            if (!allLetter(lastName, "Efternamn")) {
+                return_val = false
+            }
+            if (!allLetter(userName, "Användarnamn")) {
+                return_val = false
+            }
+            if (!validateEmail(email)) {
+                return_val = false
+            }
+            if (!password_validation(password, 8, 20)) {
+                return_val = false;
+            }
+            return return_val
+        }
+
+
+        /*Tar värdet från input elementet i form för att skapa användare*/
+        function addUser() {
+
+            let firstName = document.getElementById("userForm").elements[0].value;
+            let lastName = document.getElementById("userForm").elements[1].value;
+            let userName = document.getElementById("userForm").elements[2].value;
+            let email = document.getElementById("userForm").elements[3].value;
+            let password = document.getElementById("userForm").elements[4].value;
+            if (!formValidation(firstName, lastName, userName, email, password)) {
+                return
+            }
+            if (userName == null) {
+                return
+            }
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "https://blogg-webshop.herokuapp.com/user/create", true)
+            xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    alert(xhttp.responseText);
+                }
+            }
+            let json = JSON.stringify({
+                firstName: firstName,
+                lastName: lastName,
+                userName: userName,
+                email: email,
+                password: password
+            });
+            xhttp.send(json);
+            alert("användare registrerad!");
+            //location.reload();
+        }
+
+
+    </script>
+</head>
+
+<body onload="toggleHidden('header-nav', 800, 'burger')" onresize="toggleHidden('header-nav', 800, 'burger')">
+    <header class="parallax flexbox flex-direction-column flex-align-i-center">
+        <div class="flexbox flex-direction-column flex-align-i-center flex-justify-flex-start h-100 w-100">
+            <div class="firstHeading flexbox flex-direction-row flex-justify-space-between w-100">
+                <a href="index.html"><img src="./Imagesmodified/Logo4.png" alt="Logo" class="logo" id="logo"></a>
+                <div class="flexbox flex-direction-row bag-and-search flex-align-i-center flex-justify-space-evenly">
+                    <div class="bag-container">
+                        <a href="checkout.html"><img src="./Imagesmodified/icons8-messenger-bag-50.png" alt="carticon"
+                                class="bagimg" onload="showSmallShoppingcart()"></a>
+                        <a class="small-shoppingcart-container" href="checkout.html">
+                            <div id="small-shoppingcart"></div>
+                        </a>
+                    </div>
+                    <div id="burger" onclick="toggleOpenBurger('burger','header-nav','flex')">
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Planet B</h1>
+
+        </div>
+        <nav id="header-nav" class="show nav">
+            <a href="./climate.html">Klimatet</a>
+            <a href="./recykle.html">Återvinning</a>
+            <a href="./reuse.html">Återbruka</a>
+            <a href="./selfS.html">Självförsörjning</a>
+            <a href="./lifehacks.html">Life Hacks</a><a href="./blogg.html">Blogg</a>
+            <a href="./webbshop.html">Webbutik</a>
+        </nav>
+    </header>
+    <div class="flexbox flex-direction-column flex-align-i-center">
+        <h1>Registrera ny användare</h1>
+        <h3>Fyll i dina användaruppgifter här:</h3>
+        <form id="userForm" name='registration' class="flexbox flex-direction-column flex-align-i-center">
+            <label for="firstName">Förnamn</label>
+            <input id="firstname" type="text" name="firstname" class="inputArea" placeholder="Ditt namn...">
+            <br>
+            <label for="lastName">Efternamn</label>
+            <input type="text" name="lastname" class="inputArea" id='lastname' placeholder="Efternamn..."></input>
+            <br>
+            <label for="userName">Användarnamn</label>
+            <input type="text" name="username" class="inputArea" id='username'
+                placeholder="Ditt användarnamn..."></input>
+            <br>
+            <label for="email">Email</label>
+            <input type="text" class="inputArea" name="email" id='email' placeholder="Din email..."></input>
+            <br>
+            <label for="password">Lösenord</label>
+            <input type="text" class="inputArea" name="password" id='password' placeholder="Lösenord..."></input>
+            <br>
+            <div class="newUser">
+                <button onclick="addUser()">skapa användare</button>
+            </div>
+        </form>
+        <br>
+    </div>
+    <footer>
+        <div class="footerPitch">
+            <h2>Vårt mål!</h2>
+            <p>Planet B försöker sprida kunskap om hur du enkelt kan
+                bli mer medveten om din klimatpåverkan och vad du kan
+                göra för att vi tillsammans ska nå klimatmålen 2045.
+                Let´s do it!
+            </p>
+        </div>
+        <div class="footericons">
+            <div class="socialmedia">
+                <h2>Följ oss på socialamedier</h2>
+
+                <img src="./Imagesmodified/facebok.png" alt="facebokicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/instagram.png" alt="instagramicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/linkedin.png" alt="linkedinicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/pinterest.png" alt="pinteresticon" class="socialmediaIcon">
+                <img src="./Imagesmodified/youtube.png" alt="youtubeicon" class="socialmediaIcon">
+            </div>
+            <div class="copyright flexbox flex-direction-row flex-justify-flex-end">
+                <img src="./Imagesmodified/icons8-copyright-26.png" alt="copyrighticon" class="copyrightIcon">
+                <p>Cristina Löfqvist</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

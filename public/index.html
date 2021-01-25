@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!--språk Svenska-->
+<!--*********************************************************************
+ * Hemsida 
+ * Written by Cristina Löfqvist/ Karlstad University in June-2020.
+ *********************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/flexboxtempaltes.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <title>Document</title>
+    <script src="shoppingcart.js"></script>
+    <script src="burger.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body onload="toggleHidden('header-nav', 800, 'burger')" onresize="toggleHidden('header-nav', 800, 'burger')">
+    <header class="parallax flexbox flex-direction-column flex-align-i-center">
+        <div class="flexbox flex-direction-column flex-align-i-center flex-justify-flex-start h-100 w-100">
+            <div class="firstHeading flexbox flex-direction-row flex-justify-space-between w-100">
+                <a href="index.html"><img src="./Imagesmodified/Logo4.png" alt="Logo" class="logo" id="logo"></a>
+                <div class="flexbox flex-direction-row bag-and-search flex-align-i-center flex-justify-space-evenly">
+                    <div class="bag-container">
+                        <a href="checkout.html"><img src="./Imagesmodified/icons8-messenger-bag-50.png" alt="carticon"
+                                class="bagimg" onload="showSmallShoppingcart()"></a>
+                        <a class="small-shoppingcart-container" href="checkout.html">
+                            <div id="small-shoppingcart"></div>
+                        </a>
+                    </div>
+                    <div id="burger" onclick="toggleOpenBurger('burger','header-nav','flex')">
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Planet B</h1>
+
+        </div>
+        <nav id="header-nav" class="show nav">
+            <a href="./climate.html">Klimatet</a>
+            <a href="./recykle.html">Återvinning</a>
+            <a href="./reuse.html">Återbruka</a>
+            <a href="./selfS.html">Självförsörjning</a>
+            <a href="./lifehacks.html">Life Hacks</a><a href="./blogg.html">Blogg</a>
+            <a href="./webbshop.html">Webbutik</a>
+        </nav>
+    </header>
+    <div class="w-100 flexbox flex-justify-center">
+        <article id="first_pitch" class="flexbox flex-direction-column flex-align-i-center">
+            <h2>Vad är Planet B?</h2>
+            <p>
+                Planet B är en enlightener som vill boosta med engagemang &
+                kunskap för en chans till en hållbar framtid. Vi strävar efter att
+                vara en knytpunkt för dig som söker information, peppning
+                och inspiration till en mer hållbar framtid.
+                Navigera dig runt och utforska vår site!
+            </p>
+        </article>
+    </div>
+    <div class="middlebody" id="middlebody_mainpage">
+        <div id="mainmessage" class="flexbox flex-justify-flex-end">
+            <p>Att tänka om, för miljön och det livsviktiga kretsloppet på vår planet...</p>
+            <img src="./Imagesmodified/earth-mobile.png" alt="Bild av jordklotet" id="earthimgmainp">
+        </div>
+        <div id="maincite" class="flexbox flex-justify-flex-start">
+            <cite>
+                “ Det verkar alltid omöjligt tills det är gjort “
+                -Nelson Mandela
+            </cite>
+        </div>
+    </div>
+    <div class="w-100 flexbox flex-justify-center">
+        <article id="second_pitch" class="flexbox flex-direction-column flex-align-i-center">
+            <h2>Vårt synsätt</h2>
+            <p>Vi tror att människor tillsammans och enskilt kan skapa positiva
+                förändringar som kommer att ha betydelse för oss själva och
+                kommande generationer. </p>
+        </article>
+    </div>
+
+    <footer>
+        <div class="footerPitch">
+            <h2>Vårt mål!</h2>
+            <p>Planet B försöker sprida kunskap om hur du enkelt kan
+                bli mer medveten om din klimatpåverkan och vad du kan
+                göra för att vi tillsammans ska nå klimatmålen 2045.
+                Let´s do it!
+            </p>
+        </div>
+        <div class="footericons">
+            <div class="socialmedia">
+                <h2>Följ oss på socialamedier</h2>
+
+                <img src="./Imagesmodified/facebok.png" alt="facebokicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/instagram.png" alt="instagramicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/linkedin.png" alt="linkedinicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/pinterest.png" alt="pinteresticon" class="socialmediaIcon">
+                <img src="./Imagesmodified/youtube.png" alt="youtubeicon" class="socialmediaIcon">
+            </div>
+            <div class="copyright flexbox flex-direction-row flex-justify-flex-end">
+                <img src="./Imagesmodified/icons8-copyright-26.png" alt="copyrighticon" class="copyrightIcon">
+                <p>Cristina Löfqvist</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

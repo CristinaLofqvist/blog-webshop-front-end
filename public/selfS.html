@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="sv">
+<!--*********************************************************************
+ * Websida 
+ * Written by Cristina Löfqvist/ Karlstad University in June-2020.
+ *********************************************************************-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/flexboxtempaltes.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <title>Document</title>
+    <script src="shoppingcart.js"></script>
+    <script src="burger.js"></script>
+</head>
+
+<body onload="toggleHidden('header-nav', 800, 'burger')" onresize="toggleHidden('header-nav', 800, 'burger')">
+    <header class="parallax5 flexbox flex-direction-column flex-align-i-center">
+        <div class="flexbox flex-direction-column flex-align-i-center flex-justify-flex-start h-100 w-100">
+            <div class="firstHeading flexbox flex-direction-row flex-justify-space-between w-100">
+                <a href="index.html"><img src="./Imagesmodified/Logo4.png" alt="Logo" class="logo" id="logo"></a>
+                <div class="flexbox flex-direction-row bag-and-search flex-align-i-center flex-justify-space-evenly">
+                    <div class="bag-container">
+                        <a href="checkout.html"><img src="./Imagesmodified/icons8-messenger-bag-50.png" alt="carticon"
+                                class="bagimg" onload="showSmallShoppingcart()"></a>
+                        <a class="small-shoppingcart-container" href="checkout.html">
+                            <div id="small-shoppingcart"></div>
+                        </a>
+                    </div>
+                    <div id="burger" onclick="toggleOpenBurger('burger','header-nav','flex')">
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                        <div class="burger-bun"></div>
+                    </div>
+                </div>
+            </div>
+            <h1>Självhushållning</h1>
+
+        </div>
+        <nav id="header-nav" class="show nav">
+            <a href="./climate.html">Klimatet</a>
+            <a href="./recykle.html">Återvinning</a>
+            <a href="./reuse.html">Återbruka</a>
+            <a href="./selfS.html">Självförsörjning</a>
+            <a href="./lifehacks.html">Life Hacks</a><a href="./blogg.html">Blogg</a>
+            <a href="./webbshop.html">Webbutik</a>
+        </nav>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="middlebody">
+                <div class="flexbox flex-justify-center">
+                    <h1 class="first_heading">Självhushålla, håller det?</h1>
+                </div>
+                <div class="flexbox flex-justify-center">
+                    <h2>Det finns både för och nackdelar med självförsörjning. Här finns några exempel
+                        på
+                        varför det kan vara
+                        både
+                        trevligt,
+                        nyttigt och lönsamt att bli mer självförsörjande. </h2>
+                </div>
+                <div class="self-sustain-article-container">
+                    <!--ringar in innehållande element med klass och sen även, för att sikta in sig rätt vid css style, id-->
+                    <article>
+                        <!--ringar in innehållande elemet med rubriker, text och bild-->
+                        <img src="./Imagesmodified/icons8-globe-earth-64.png" width="50" height="50"
+                            alt="Ikon bild av ett jordklot" />
+                        <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                        <h2>Resurser</h2>
+                        <p> Ekologisk självförsörjning på landsbygden har blivit lite av en trend.</p>
+                        <p>Visst är det bra för hälsan ur ett egoistiskt perspektiv men det är inte möjligt för
+                            större delen av jordens invånare att äga ett småskalgit jordbruk och håller helt enkelt inte
+                            ur
+                            ett
+                            globalt perspektiv.</p>
+                        <p>Det finns även en del forskning som visar
+                            på att det inte heller är det bästa för klimatet.</p>
+                        <p>I en studie vid namn "Assesing the efficiancy of land use changes for mitigating climate
+                            change"
+                            som
+                            publicerades i
+                            tidskriften Nature, menar forskarna Timothy D.</p>
+                        <p>Searchinger, Stefan Wirsenius, Tim Beringer att
+                            anledningen bland annat är att skördarna från ekologisk odling ger mindre
+                            avkastning
+                            och därför krävs mer odlingsyta för att täcka behovet. Användnignen av mer mark till
+                            matproduktion
+                            leder
+                            till avskogning och mindre skog som binder koldioxiden. </p>
+
+                        <p class="source">Källa "Assessing the efficiency of changes in
+                            land use for mitigating climate change"
+                            Timothy D. Searchinger, Stefan Wirsenius, Tim Beringer et al
+                            Nature. Vol. 564 (7735), p. 249-253. Publicerad 2018. Hämtad 2019-10-25.</p>
+                    </article>
+                    <article>
+
+                        <img src="./Imagesmodified/icons8-shopping-cart-80.png" width="50" height="50"
+                            alt="Ikon bild av en shoppingvagn" />
+                        <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                        <h2>Inköp</h2>
+                        <p>Att hushålla med egna resurser innebär att man drar ner på
+                            inköp av varor. Hållbar konsumtion definieras av FN som att kunna
+                            köpa det man behöver för att
+                            tillgodose våra behov,
+                            utan att äventyra framtida generationers möjlighet att kunna tillgodogöra sig sina.</p>
+                        <p>Aktörer i
+                            alla
+                            samhällsskikt behöver hjälpas åt för att hållbar konsuption ska uppnås.
+                            Det betyder att vi alla skulle behöva tänka över våra inköp. Svenskarnas konsumtion
+                            fortsätter
+                            att
+                            öka
+                            och vi ligger nu på tionde plats över länder som släpper ut mest växthusgaser per person.
+                        </p>
+
+                        <p class="source">Källa Sveriges Konsumenter. "Hållbar Konsumtion"
+                            https://www.sverigeskonsumenter.se/vad-vi-gor/hallbar-konsumtion/ Publicerad 2019. Hämtad
+                            2019-10-23.
+                        </p>
+                    </article>
+                </div>
+                <div class="self-sustain-article-container">
+                    <article>
+                        <img src="./Imagesmodified/icons8-smiling-80.png" width="50" height="50"
+                            alt="Ikon bild av en smiley" />
+                        <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                        <h2>Feel good</h2>
+                        <p>Flera viktiga växter, insekter och fågelarter mår bra av ekologisk odling.</p>
+                        <p>Mångfalden är dubbelt
+                            så
+                            stor
+                            kring ekologiskka odlignar som runt icke ekologiska odlingra.</p>
+                        <p>Detta hjälper i sin tur växteranas näringsuptagning och pollinering vilket minska behovet av
+                            bekämpningsmedel. </p>
+
+                        <p class="source">Källa: naturskyddsföreningen. "6 anledningar att byta till eko"
+                            https://www.naturskyddsforeningen.se/vad-vi-gor/jordbruk/eko/6-anledningar-att-byta-till-eko
+                            Publicerad
+                            2016-02-05. Hämtad 2019-10-24. </p>
+                    </article>
+                    <article>
+
+                        <img src="./Imagesmodified/icons8-landscape-80.png" width="50" height="50"
+                            alt="Ikon bild av ett landskap" />
+                        <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                        <h2>Utevistelse</h2>
+                        <p>När vi befinner oss utomhus minskar stressnivåerna. Detta beror på flera faktorer. Dels en
+                            psykologisk
+                            effekt av att vi upplever att vi befinner oss på distans från krav och rutiner
+                            som finns i vardagen och dels att vårt intresse fångas av naturen. </p>
+                        <p class="source">Källa: Hartig Terry 2003 ”I naturen
+                            sjunker blodtrycket” Skog & Forskning 2003 nr 2.</p>
+                        <!--sätter klass source på elementet p-->
+                        <p>Detta samband finns oavsätt kön, ålder, social och ekonomisk position.</p>
+                        <p class="source">Källa: Grahn Patrik &
+                            Stigsdotter
+                            Ulrika 2003 ”Landscape planning and stress” </p>
+                    </article>
+                </div>
+                <div class="self-sustain-article-container">
+                    <article>
+                        <img src="./Imagesmodified/icons8-money-box-80.png" width="50" height="50"
+                            alt="ikon bild av en spargris" />
+                        <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                        <h2>Ekonomiska bitar</h2>
+                        <p>Genom att ägna sig åt självhushållning minskar suget efter konsumtion vilket har goda
+                            effekter
+                            för
+                            privatekonomin.</p>
+                        <p>Det kan bli en utmaning att hitta andra lösningar om man behöver något.</p>
+                        <p>Kanske står det just ett
+                            sånt
+                            matbord du skulle
+                            behöva och skräpar på grannens vind eller kanske kan du omvärdera vad du verkligen behöver
+                            köpa
+                            nytt.</p>
+                    </article>
+                    <article>
+                        <img src="./Imagesmodified/icons8-clock-64.png" width="50" height="50"
+                            alt="Ikon bild av en klocka" />
+                        <!--bilden har laddtas ner från en free image webbplats icons 8-->
+                        <h2>Trappa ner</h2>
+                        <p>I dag lider många av ohälsa som är kopplad till stress och utbrändhet.</p>
+                        <p>Genom att omvärdera sin tid
+                            och
+                            ägna sig mer åt självförsörjning där man minskar på utgifterna,
+                            ökar också möjligheten för ett lugnare liv.</p>
+                        <p>Där man har mer tid att lägga på det som verkligen
+                            känns
+                            viktigt. </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="lowerbody">
+            <div class="side-by-side">
+                <img id="tomato-hands" src="./Imagesmodified/elaine-casap-qgHGDbbSNm8-unsplash.jpg" width="300"
+                    height="200" alt="tomater som hålls i två par kupade händer" />
+                <!--Ger kred till skaparen av bilden med tomater a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@ecasap?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Elaine Casap"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Elaine Casap</span></a>-->
+                <blockquote id="voltaire-quote">"Il faut cultiver notre jardin" Franska för "Man måste odla sin
+                    trädgård"-
+                    Av
+                    filosofen
+                    Voltaire i sitt verk , Candide år 1759
+                </blockquote>
+            </div>
+            <div class="lowerbody-links">
+
+                <a href="rotfrukter.html"><button class="special_button">Rotfrukter<div
+                            class="special_button__horizontal"></div>
+                        <div class="special_button__vertical"></div>
+                    </button></a>
+
+                <a href="sallad.html"><button class="special_button">Sallad<div class="special_button__horizontal">
+                        </div>
+                        <div class="special_button__vertical"></div>
+                    </button></a>
+
+                <a href="balgvaxter.html"><button class="special_button">Baljväxter<div
+                            class="special_button__horizontal"></div>
+                        <div class="special_button__vertical"></div>
+                    </button></a>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footerPitch">
+            <h2>Vårt mål!</h2>
+            <p>Planet B försöker sprida kunskap om hur du enkelt kan
+                bli mer medveten om din klimatpåverkan och vad du kan
+                göra för att vi tillsammans ska nå klimatmålen 2045.
+                Let´s do it!
+            </p>
+        </div>
+        <div class="footericons">
+            <div class="socialmedia">
+                <h2>Följ oss på socialamedier</h2>
+
+                <img src="./Imagesmodified/facebok.png" alt="facebokicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/instagram.png" alt="instagramicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/linkedin.png" alt="linkedinicon" class="socialmediaIcon">
+                <img src="./Imagesmodified/pinterest.png" alt="pinteresticon" class="socialmediaIcon">
+                <img src="./Imagesmodified/youtube.png" alt="youtubeicon" class="socialmediaIcon">
+            </div>
+            <div class="copyright flexbox flex-direction-row flex-justify-flex-end">
+                <img src="./Imagesmodified/icons8-copyright-26.png" alt="copyrighticon" class="copyrightIcon">
+                <p>Cristina Löfqvist</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
