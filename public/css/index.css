@@ -59,6 +59,9 @@ nav a {
 .small-shoppingcart-container {
   position: absolute;
 }
+p, h1, h2, h3, h4, h5, h6{
+  max-width: 800px;
+}
 
 #small-shoppingcart {
   font-weight: bold;
@@ -134,10 +137,9 @@ body {
 
 .copyright img {
   margin-left: 0.5em;
-  width: 25px;
-  height: 25px;
+  width: 19px;
+  height: 19px;
 }
-
 #recycle-article {
   padding: 3em;
 }
@@ -286,10 +288,10 @@ label {
   width: 60%;
   background-color: #E8E4E1;
   border-radius: 50px 10px;
-  padding: 20px;
   margin-top: 1.8em;
   margin-bottom: 1.8em;
   color: #26466C;
+  padding:50px;
 }
 
 #first_pitch p {
@@ -304,6 +306,7 @@ label {
   margin-top: 1.8em;
   margin-bottom: 1.8em;
   color: #26466C;
+  padding:50px;
 }
 
 #second_pitch p {
@@ -489,14 +492,20 @@ input {
      font-weight: normal;
  }*/
 /* sätter färg på input när pekaren drar över input fältet*/
-input:hover {
-  color: #738c8c;
+a:hover {
+  color: whitesmoke;
+  background-color: #A0C1B8;
+  padding:5px;
 }
 
-/* sätter färg på input när pekaren drar över a fältet*/
+/* styles for a*/
 a {
   text-decoration: none;
   color: #85894A;
+}
+
+.lighter a {
+  color:whitesmoke;
 }
 
 .drop {
@@ -517,7 +526,14 @@ a:active {
 }
 
 a:hover {
-  color: #4A5D57;
+  color:whitesmoke;
+}
+
+.photocred {
+  font-size: 12px;
+  color:#1d1f1e;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* Sätter style på alla källor med classen source*/
@@ -1132,6 +1148,9 @@ button:focus {
 
   #climate-control-article img {
     margin-right: 5px;
+  }
+  #climate-control-article p {
+    padding-left: 20px;
   }
 
   #climate-control-article {
