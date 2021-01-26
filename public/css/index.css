@@ -172,6 +172,12 @@ body {
 .middlebody-links {
   padding: 5em;
 }
+.center {
+  display:flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 textarea {
   height: 12.5em;
@@ -775,6 +781,9 @@ button:focus {
     font-size: 110%;
     margin: 0.5em;
     /*Visar elemet a med id header-nav som ett block, tar upp hela bredden*/
+  }
+  #header-nav {
+    background-color: #d3dbd5;
   }
 
   #navigate-button {
