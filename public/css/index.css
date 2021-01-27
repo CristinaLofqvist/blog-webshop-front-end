@@ -59,8 +59,8 @@ nav a {
 .small-shoppingcart-container {
   position: absolute;
 }
-p, h1, h2, h3, h4, h5, h6{
-  max-width: 800px;
+h1, h2, h3, h4, h5, h6{
+  max-width: 700px;
 }
 
 #small-shoppingcart {
@@ -98,6 +98,7 @@ footer {
 /* end of flexgrid sturcture*/
 p {
   line-height: 150%;
+  max-width: 500px;
 }
 
 html {
@@ -122,6 +123,7 @@ body {
 
 .footerPitch {
   width: 14em;
+  text-align: center;
 }
 
 .footerPitch p {
@@ -131,8 +133,12 @@ body {
 
 .socialmedia img {
   padding: 1.5em;
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
+}
+.socialmedia {
+  padding:20px;
+  line-height: 150%;
 }
 
 .copyright img {
@@ -162,13 +168,6 @@ body {
   margin-top: 5em;
 }
 
-#maincite cite {
-  margin-top: 2em;
-  margin-left: 2em;
-  font-size: 150%;
-  color: whitesmoke;
-}
-
 .middlebody-links {
   padding: 5em;
 }
@@ -194,6 +193,10 @@ label {
 
 .h-100 {
   height: 100%;
+}
+
+.reuse_middlebody img {
+  padding:20px;
 }
 
 /*parallax*/
@@ -384,6 +387,9 @@ label {
   color: #000;
   font-size: 35px;
   font-weight: bold;
+}
+ul, li {
+  max-width: 500px;
 }
 
 /*Close button on hover */
@@ -637,6 +643,7 @@ button:hover {
   border-style: solid;
   border-color: black;
   border-width: 1px;
+  background-color: #A0C1B8;
 }
 
 button:visited {
@@ -706,6 +713,11 @@ button:focus {
   width: 100%;
 }
 
+#climate-control-article {
+  flex-wrap: wrap;
+  padding:20px;
+}
+
 /* style för minsta webbläsarfönster/mobil användare */
 /*
  **********************************************
@@ -725,6 +737,10 @@ button:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .wrapper {
+    font-size: 80%;
   }
 
   .button-container {
@@ -940,6 +956,24 @@ button:focus {
     min-width: 400px;
     min-height: 500px;
   }
+
+  .special_button {
+    max-width: 200px;
+    font-size: 60%;
+  }
+
+  #earth-pic {
+    max-width: 200px;
+    height:auto;
+  }
+  #maincite cite {
+    margin-top: 2em;
+    margin-left: 2em;
+    font-size: 100%;
+    color: whitesmoke;
+    max-width: 100px;
+  }
+
 }
 /* Sätter style för mellan storlek/surfplatta*/
 /*
@@ -1160,12 +1194,25 @@ button:focus {
   }
   #climate-control-article p {
     padding-left: 20px;
+    max-width:700px !important;
   }
 
   #climate-control-article {
     padding: 5px;
-    text-align: justify;
+    width:100%;
+    max-width: 700px;
   }
+  #earth-pic {
+    max-width: 280px;
+    height:auto;
+  }
+  #maincite cite {
+    margin-top: 2em;
+    margin-left: 2em;
+    font-size: 100%;
+    color: whitesmoke;
+  }
+
 }
 /* Sätter style för stor storlek/datorskärm*/
 /*
@@ -1184,6 +1231,13 @@ button:focus {
 @media only screen and (min-width: 801px) {
   .productPage img {
     padding: 5px;
+  }
+
+  #maincite cite {
+    margin-top: 2em;
+    margin-left: 2em;
+    font-size: 150%;
+    color: whitesmoke;
   }
 
   #header-nav a {
@@ -1220,7 +1274,10 @@ button:focus {
   #tomato-hands {
     margin-top: 20px;
   }
-
+  #climate-control-article p {
+    padding-left: 20px;
+    max-width:700px !important;
+  }
   /* Säter style och positionering på quote elementen*/
   #voltaire-quote {
     display: flex;
@@ -1300,7 +1357,6 @@ button:focus {
   }
 
   #climate-control-article {
-    text-align: justify;
     padding: 5px;
   }
 
@@ -1361,6 +1417,10 @@ button:focus {
     position: absolute;
     right: 0;
     top: 50%;
+  }
+  #earth-pic {
+    max-width: 380px;
+    height:auto;
   }
 }
 /*Straight up sassy*/
@@ -1459,6 +1519,7 @@ button:focus {
   border-radius: 0;
   box-shadow: inset 0 0 0 var(--border-size) currentcolor;
   transition: background 0.8s ease;
+  margin:20px;
 }
 .special_button:hover {
   background: rgba(100, 0, 0, 0.03);
